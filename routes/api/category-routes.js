@@ -5,10 +5,10 @@ const { Category, Product, } = require('../../models');
 
 router.get('/', async (req, res) => {
   try {
-    const categoryData = await Category.findAll({
+    const categoryGet = await Category.findAll({
       include: [{ model: Product }],
     });
-    res.status(200).json(categoryData);
+    res.status(200).json(categoryGet);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -16,16 +16,16 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
   try {
-    const categoryData = await Category.findByPk(req.params.id, {
+    const categoryGetOne = await Category.findByPk(req.params.id, {
       include: [{ model: Product }],
     });
 
-    if (!categoryData) {
+    if (!categoryGetOne) {
       res.status(404).json({message: 'No category found with that id!'});
       return;
     }
 
-    res.status(200).json(categoryData);
+    res.status(200).json(categoryGetOne);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -33,8 +33,8 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const categoryData = await Category.create(req.body);
-    res.status(200).json(categoryData);
+    const categoryCreate = await Category.create(req.body);
+    res.status(200).json(categoryCreate);
   } catch (err) {
     res.status(400),json(err);
   }
@@ -43,7 +43,7 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
   try {
     const categoryUpdate = await Category.update(req.body, {
-      individualHooks: true,
+      // individualHooks: true,
       where: {
         id: req.params.id
       },
@@ -53,7 +53,7 @@ router.put('/:id', async (req, res) => {
       res.status(404).json({message: 'No category found with that id!'});
       return;
     }
-    res.status(404).json(categoryUpdate);
+    res.status(200).json(categoryUpdate);
   } catch (err) {
     res.status(500).json(err);
   }
