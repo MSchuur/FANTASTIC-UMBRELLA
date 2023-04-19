@@ -43,7 +43,7 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
   try {
     const categoryUpdate = await Category.update(req.body, {
-      // individualHooks: true,
+      individualHooks: true,
       where: {
         id: req.params.id
       },
