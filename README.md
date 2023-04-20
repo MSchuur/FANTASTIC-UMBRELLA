@@ -18,28 +18,28 @@ All ecommerce companies require an application that can keep track of products a
 ## Installation
 To install this application clone the Github repo and create a copy on your local machine. Once you have cloned your copy open the application in VS Code, open a new terminal and in the CLI type NPM Install.
 
+<img width="1277" alt="NPM Install" src="https://user-images.githubusercontent.com/120262482/233230844-cf61db3b-876d-450c-9e36-7db62e4b28fb.png">
 
+Before runnig the application you must install MySQL onto your local machine ensuring you are using the Server version.  Once install open a second terminal and start the MySQL CLI interface by typing mysql -u root -p 
 
-Before runnig the application you must install MySQL onto your local machine ensuring you are using the Server version.  Once install open a second terminal and start the MySQL CLI interface by typing mysql - root -p 
+<img width="1278" alt="MYSQL Install" src="https://user-images.githubusercontent.com/120262482/233231164-03d84e9f-5e8b-441c-a2df-5169256f2423.png">
 
-<img width="1279" alt="MySQL Init" src="https://user-images.githubusercontent.com/120262482/230789342-52fff7de-6087-43d9-884f-3a6406bb52e7.png">
+At the mysql> prompt type "SOURCE db/schema.sql;" This will initiate the sales_db database. Once complete typ "USE sales_db;".
 
-At the mysql> prompt type mysql "SOURCE schema.sql;" This will initiate the employee_trackerBD and create the Department, Roles and Employees tables.
+<img width="1277" alt="Use Sales DB" src="https://user-images.githubusercontent.com/120262482/233231775-399eca48-68fc-4ca9-a723-0644836a2086.png">
 
-<img width="1279" alt="Schema" src="https://user-images.githubusercontent.com/120262482/230789404-76ab4227-c70a-4fb6-949d-89ad4f78a190.png">
+Change back to the first terminal and type "npm run seed" to seed the tables to able to use the routes.
 
-Then at the mysql> prompt type "SOURCE seeds.sql;" This will seed all three tables with base data that can be changed later.
-
-<img width="1277" alt="Seeds" src="https://user-images.githubusercontent.com/120262482/230789562-f1c37ab5-943a-4a01-90b9-d6e7610e8636.png">
+<img width="1277" alt="Seed the tables" src="https://user-images.githubusercontent.com/120262482/233232484-61e9d9c1-44df-4e04-8084-137bbbbebc35.png">
 
 ## Usage
-After the DataBase has been setup at the bash command line (make sure you change terminals at this time) type NPM Start. 
+After the DataBase has been setup at the bash command line type "NPM Start". 
 
-<img width="1279" alt="NPM_Start" src="https://user-images.githubusercontent.com/120262482/230790152-49e4acb7-e538-47fc-9635-4099497df87c.png">
+<img width="1280" alt="NPM Start" src="https://user-images.githubusercontent.com/120262482/233232670-e1116b2c-e68b-4b68-ad10-2eaeb7ad8311.png">
 
-A list of available options will appear. Use the Up and Down arrows to navigate to the option you wish to conduct and click 'Enter". The following is a video on how to navigate the application:
+At this time the application is running on port 3001 and you can use Insomnia or equivilant program of you choosing and run GET, POST, PUT and DELETE routes to manipulate the data. A demonstration of the applications function is linked below.
 
-https://drive.google.com/file/d/1sJcBiR70Rhivw7ovHGuJlEU111tAvy7G/view
+https://drive.google.com/file/d/1tYAoCrS5Qv5EONGjWMmN2deeRUMSITIA/view
 
 ## License
 This project does not have a license attached.
